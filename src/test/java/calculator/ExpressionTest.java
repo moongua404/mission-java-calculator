@@ -51,4 +51,10 @@ class ExpressionTest {
             new Expression("1,a:3");
         });
     }
+
+    @Test
+    void 한자리_숫자가_아닌_수() {
+        Expression expr = new Expression("1,10,100,3000");
+        assertEquals(3111, expr.calculate());
+    }
 }
